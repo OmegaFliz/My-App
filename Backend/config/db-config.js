@@ -1,9 +1,12 @@
+require("dotenv").config();
+
 module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "lynndatabase0000",
-  DB: "login_form",
-  dialect: "mysql",
+  DB: process.env.DB,
+  USER: process.env.USER,
+  PASSWORD: process.env.PASSWORD,
+  HOST: process.env.HOST,
+  dialect: process.env.DIALECT || "mysql",
+  port: process.env.PORT || 3306,
   pool: {
     max: 5,
     min: 0,
